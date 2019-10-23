@@ -1,0 +1,2 @@
+https://dribbble.com/shots/7725958-Watch-Shop-UI-animation-1
+https://www.nuget.org/packages/Refractored.MvvmHelpers/

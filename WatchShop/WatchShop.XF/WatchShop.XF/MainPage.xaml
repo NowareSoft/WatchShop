@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="WatchShop.XF.MainPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            Padding="0,0,20,0">
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="20"
+                Source="menu"
+                WidthRequest="20"/>
+
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="20"
+                HorizontalOptions="CenterAndExpand"
+                Source="shop"
+                Margin="90,0,0,0"
+                WidthRequest="20"/>
+
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="20"
+                HorizontalOptions="EndAndExpand"
+                Source="search"
+                WidthRequest="20"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <AbsoluteLayout
+        BackgroundColor="White"
+        Padding="20">
+
+        <listView:SfListView
+            ItemSize="250"
+            ItemsSource="{Binding Watches}">
+            <listView:SfListView.LayoutManager>
+                <listView:GridLayout
+                    SpanCount="2"/>
+            </listView:SfListView.LayoutManager>
+
+            <listView:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <AbsoluteLayout
+                            Margin="10,15">
+
+                            <pancake:PancakeView
+                                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                AbsoluteLayout.LayoutFlags="All"
+                                CornerRadius="5"
+                                Elevation="2"
+                                Margin="0,60,0,0">
+
+                                <StackLayout
+                                    Margin="0,60,0,0">
+                                    <!-- Title -->
+                                    <Label
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Title}"
+                                        TextColor="Black"/>
+
+                                    <!-- Brand -->
+                                    <Label
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding BrandUp}"
+                                        TextColor="Silver"/>
+
+                                    <!-- Price -->
+                                    <Label
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Price}"
+                                        TextColor="#814E3D"/>
+
+                                </StackLayout>
+                            </pancake:PancakeView>
+
+                            <Image
+                                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                AbsoluteLayout.LayoutFlags="All"
+                                Aspect="AspectFit"
+                                HeightRequest="120"
+                                HorizontalOptions="CenterAndExpand"
+                                Source="{Binding Image}"
+                                VerticalOptions="StartAndExpand"
+                                WidthRequest="120"/>
+                        </AbsoluteLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </listView:SfListView.ItemTemplate>
+        </listView:SfListView>
+        <border:SfBorder
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#814E3D"
+            BorderWidth="0"
+            CornerRadius="30"
+            HeightRequest="60"
+            HorizontalOptions="CenterAndExpand"
+            Margin="0,40"
+            VerticalOptions="EndAndExpand"
+            WidthRequest="60">
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="25"
+                HorizontalOptions="Center"
+                Source="menu_button"
+                WidthRequest="25"
+                VerticalOptions="Center"/>
+        </border:SfBorder>
+    </AbsoluteLayout>
+</ContentPage>

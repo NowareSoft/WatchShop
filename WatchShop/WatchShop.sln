@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchShop.XF.Android", "WatchShop.XF\WatchShop.XF.Android\WatchShop.XF.Android.csproj", "{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchShop.XF", "WatchShop.XF\WatchShop.XF\WatchShop.XF.csproj", "{4455B8EC-A0FF-49D9-A784-0A2F13BB6823}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E46392F-B982-41C6-9DE9-E27A4E6A41D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4455B8EC-A0FF-49D9-A784-0A2F13BB6823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4455B8EC-A0FF-49D9-A784-0A2F13BB6823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4455B8EC-A0FF-49D9-A784-0A2F13BB6823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4455B8EC-A0FF-49D9-A784-0A2F13BB6823}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3161FC8B-6CC9-4245-8243-C74C34CA46BA}
+	EndGlobalSection
+EndGlobal
