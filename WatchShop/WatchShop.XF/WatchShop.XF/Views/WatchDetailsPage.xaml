@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:rotator="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="WatchShop.XF.Views.WatchDetailsPage"
+             NavigationPage.HasBackButton="False">
+    
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            Padding="0,0,20,0">
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="20"
+                Source="menu"
+                WidthRequest="20"/>
+
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="20"
+                HorizontalOptions="CenterAndExpand"
+                Source="shop"
+                Margin="90,0,0,0"
+                WidthRequest="20"/>
+
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="20"
+                HorizontalOptions="EndAndExpand"
+                Source="search"
+                WidthRequest="20"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <Grid
+            Padding="20,30,20,20"
+            BackgroundColor="#E1E1E1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!-- Images -->
+            <rotator:SfRotator
+                DotPlacement="None"
+                EnableAutoPlay="True"
+                ItemsSource="{Binding Watch.Images}"
+                NavigationDelay="5000"
+                NavigationDirection="Horizontal">
+                <rotator:SfRotator.ItemTemplate>
+                    <DataTemplate>
+                        <Image
+                            Aspect="AspectFit"
+                            Source="{Binding Source}"/>
+                    </DataTemplate>
+                </rotator:SfRotator.ItemTemplate>
+            </rotator:SfRotator>
+            
+            <!-- Title -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="22"
+                Grid.Row="1"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Watch.Title}"
+                TextColor="Black"/>
+
+            <!-- Price -->
+            <Label
+                FontSize="22"
+                Grid.Row="2"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Watch.PriceString}"
+                TextColor="#814E3D"/>
+
+            <!-- Movement -->
+            <StackLayout
+                Grid.Row="3"
+                Orientation="Horizontal"
+                HorizontalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    Text="MOVEMENT:"
+                    TextColor="Black"/>
+                <Label
+                    Text="{Binding Watch.Movement}"
+                    TextColor="Black"/>
+            </StackLayout>
+
+            <!-- Case -->
+            <StackLayout
+                Grid.Row="4"
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                Margin="0,0,0,15">
+                <Label
+                    FontAttributes="Bold"
+                    Text="CASE:"
+                    TextColor="Black"/>
+                <Label
+                    Text="{Binding Watch.Case}"
+                    TextColor="Black"/>
+            </StackLayout>
+            
+            <!-- Buttons-->
+            <Grid
+                Grid.Row="5"
+                Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <!-- Back -->
+                <border:SfBorder
+                    BackgroundColor="#814E3D"
+                    BorderWidth="0"
+                    CornerRadius="25"
+                    HeightRequest="50">
+                    <Image
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Source="left_arrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20"/>
+                    <border:SfBorder.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </border:SfBorder.GestureRecognizers>
+                </border:SfBorder>
+
+                <!-- Add to cart -->
+                <button:SfButton
+                    BackgroundColor="#814E3D"
+                    BorderWidth="0"
+                    CornerRadius="25"
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    Text="ADD TO CART"
+                    TextColor="White"/>
+
+                <!-- Favorite -->
+                <border:SfBorder
+                    BackgroundColor="#814E3D"
+                    BorderWidth="0"
+                    CornerRadius="25"
+                    Grid.Column="2"
+                    HeightRequest="50">
+                    <Image
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Source="bookmark.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20"/>
+                    <border:SfBorder.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding FavoriteCommand}"/>
+                    </border:SfBorder.GestureRecognizers>
+                </border:SfBorder>
+            </Grid>
+
+            <!-- About -->
+            <StackLayout
+                Grid.Row="6"
+                HorizontalOptions="Center">
+                <Label
+                    Text="ABOUT"
+                    TextColor="Gray"/>
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="10"
+                    Source="points.png"
+                    WidthRequest="10"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AboutCommand}}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

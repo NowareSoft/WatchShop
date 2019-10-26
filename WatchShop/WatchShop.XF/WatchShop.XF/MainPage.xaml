@@ -91,9 +91,12 @@
                                 Aspect="AspectFit"
                                 HeightRequest="120"
                                 HorizontalOptions="CenterAndExpand"
-                                Source="{Binding Image}"
+                                Source="{Binding FirstImage}"
                                 VerticalOptions="StartAndExpand"
                                 WidthRequest="120"/>
+                            <AbsoluteLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding DetailsCommand}"/>
+                            </AbsoluteLayout.GestureRecognizers>
                         </AbsoluteLayout>
                     </ViewCell>
                 </DataTemplate>
